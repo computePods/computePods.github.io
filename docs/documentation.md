@@ -1,4 +1,7 @@
-# Documenting the ComputePods Project
+---
+title: Documenting the ComputePods Project
+layout: page
+---
 
 All of the ComputePod projects based on Python use the [mkdocs]()
 documentation generation tool.
