@@ -1,0 +1,9 @@
+site_name: ComputePods Python Utilities
+
+plugins:
+  - search
+  - awesome-pages
+  - mkdocstrings
+
+theme:
+  name: material
