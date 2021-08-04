@@ -3,8 +3,8 @@
 The ComputePods Project provides the tools needed to distribute any simple
 [embarrassingly
 parallelisable](https://en.wikipedia.org/wiki/Embarrassingly_paralle>)
-computational task (such as, but not limited to, compilation of source
-code) across multiple computers.
+computational task (such as, but not limited to, compilation of "source
+code") across multiple computers.
 
 A ComputePods "pod" is an coordinated collection of
 [OCI](https://opencontainers.org/) containers. These ComputePods can be
