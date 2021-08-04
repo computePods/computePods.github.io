@@ -2,8 +2,28 @@ site_name: ComputePods
 
 plugins:
   - search
-  - awesome-pages
-  - mkdocstrings
+  - compute-pods
+#  - awesome-pages
+#  - mkdocstrings
 
 theme:
   name: material
+
+nav:
+  - Home:                        ./index.html
+  - Subprojects:
+    - MajorDomoUI:               ./majorDomoUI/
+    - MajorDomo:                 ./majorDomo/
+    - Chef:                      ./chef/
+    - inotify2nats:              ./inotify2nats/
+    - PythonUtils:               ./pythonUtils/
+    - Interfaces:                ./interfaces/
+  - Tools:
+    - computePodBuilder:         ./computePodBuilder/
+    - podmanRegistry:            ./podmanRegistry/
+    - natsLogger:                ./natsLogger/
+    - InterfaceGenerator:        ./interfaceGenerator/
+    - asyncWatchDo:              ./asyncWatchDo/
+    - simpleHttpReloadServer:    ./simpleHttpReloadServer/
+    - mkdocs-computePods-plugin: ./mkdocs-computePods-plugin
+  - Documentation:               documentation.md
