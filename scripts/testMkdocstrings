@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# This bash script runs the mkdocstrings engine pytkdocs from the command
+# line. This allows any errors to be reported... so they can be fixed.
+
+# NOTES: if you are having trouble with mkdocstrings (with empty output
+# and hence json parsing errors) or if `--line-by-line` is an unrecognised
+# parameter this is possibly because you are using the Python standard
+# argparsing at the global level instead of inside a function.
+#
+# YOU MUST ensure all argument parsing functions are done INSIDE a
+# function.
+
+if which pytkdocs > /dev/null ; then
+  /bin/true
+else
+  echo ""
+  echo "To use testMkdocstrings you MUST have installed pytkdocs"
+  echo "You can use:"
+  echo "   pipx install pytkdocs"
+  echo "to install pytkdocs locally."
+  echo ""
+fi
+
+jsonTool=" python -m json.tool"
+if which jq > /dev/null ; then
+  jsonTool=" jq "
+fi
+
+if [ "$#" -eq 0 ] ; then
+  echo "usage: testMkdocstrings <aPackage> [ <aPackage> ]*"
+  exit 1
+fi
+
+
+for aPkg in $* ; do
+  pytkdocsCmd=$(cat << PYTKDOCS_CMD
+{ "objects": [ { "path": "$aPkg", "filters": ["!^_[^_]"] } ] }
+PYTKDOCS_CMD
+)
+  echo $pytkdocsCmd | \
+    pytkdocs --line-by-line | \
+    $jsonTool
+done

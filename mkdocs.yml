@@ -27,3 +27,4 @@ nav:
     - simpleHttpReloadServer:    ./simpleHttpReloadServer/
     - mkdocs-computePods-plugin: ./mkdocs-computePods-plugin
   - Documentation:               documentation.md
+  - Development:                 ./developmentTasks/
